@@ -12,7 +12,13 @@ int sub1[100], sub2[100], sub3[100], sub4[100], sub5[100], sub6[100], sub7[100];
 
 void entry (int A[], int i){
     printf("\tRoll %d: ", i+1);
-    scanf("%d", &A[i]);
+    while (scanf("%d", &A[i])==1){
+        if (A[i]<0 || A[i]>100){
+            printf("\tPlease enter the valid mark.\n");
+            printf("\tRoll %d: ", i+1);
+        }
+        else break;
+    }
 }
 
 void gpa (int A[], float B[], int i){
