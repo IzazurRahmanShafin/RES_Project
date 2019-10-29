@@ -2,7 +2,9 @@
 ///             Coded by IZAZUR RAHMAN SHAFIN.
 ///             Dept. of CSE, DCC.
 
-#include<stdio.h>
+#include<bits/stdc++.h>
+using namespace std;
+
 #define fr(n) for (i=0; i<n; i++)
 #define fr2(n) for (j=0; j<n; j++)
 #define fr3(n) for (j=1; j<=n; j++)
@@ -47,7 +49,9 @@ int main(){
 
     while (scanf("%d", &n)!=EOF){
         printf("\n\t\t\t...Submit Marks...\n");
-
+        
+        /// submitting marks...
+        
         printf("\n\tBangla:\n\n");                  fr(n) entry(sub1, i);
         printf("\n\tEnglish:\n\n");                 fr(n) entry(sub2, i);
         printf("\n\tMathematics:\n\n");             fr(n) entry(sub3, i);
@@ -58,10 +62,10 @@ int main(){
         printf("\n");
 
         fr(n)   total1[i]=sub1[i]+sub2[i]+sub3[i]+sub4[i]+sub5[i]+sub6[i];
-
+        /// coping total1 to total3...
         fr(n)   total3[i]=total1[i];
-
-        fr3(n) {
+        /// sorting marks...
+        fr3(n) {                   
             for (k=0; k<=n-j-1; k++){
                 if (total3[k] < total3[k+1]){
                     swap=total3[k+1];
@@ -70,9 +74,7 @@ int main(){
                 }
             }
         }
-
-        /// Binary Search to be needed.....
-
+        /// compare marks rollwise...
         fr(n) {
             fr2(n) {
                 if (total1[i]==total3[j]){
@@ -81,7 +83,7 @@ int main(){
                 }
             }
         }
-
+        /// checking GPA...
         fr(n)   gpa(sub1, s1, i);
         fr(n)   gpa(sub2, s2, i);
         fr(n)   gpa(sub3, s3, i);
